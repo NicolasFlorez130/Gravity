@@ -1,0 +1,690 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+@font-face {
+  font-family: "Alpha";
+  src: url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d0d1110e8ded04549700868_Alpha%20Headline%20Pro-Regular.woff2") format("woff2"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d0d111014a590e038ffabd0_Alpha%20Headline%20Pro-Regular.woff") format("woff"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d0d1110fddaa95c96400edd_Alpha%20Headline%20Pro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Alpha";
+  src: url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018745bf8be86028291569_Alpha%20Headline%20Pro-Bold.woff2") format("woff2"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018745d83e7af2188ec86e_Alpha%20Headline%20Pro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neubaugrotesk";
+  src: url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018754d83e7a44118ec896_NeubauGrotesk-45Mager.woff2") format("woff2"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018754a5f05dfb01afb61a_NeubauGrotesk-45Mager.woff") format("woff"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018754e8bafe3f8b0c0577_NeubauGrotesk-45Mager.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Neubaugrotesk";
+  src: url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018763a5f05d029dafb62f_NeubauGrotesk-65Halbfett.woff2") format("woff2"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018763e8bafe6dba0c0586_NeubauGrotesk-65Halbfett.woff") format("woff"), url("https://assets.website-files.com/5d01871828b9a69113d30c4a/5d018763bf8be8be58291579_NeubauGrotesk-65Halbfett.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  font-size: 1em;
+}
+* a {
+  color: white;
+}
+
+html {
+  color: white;
+  font-family: "Neubaugrotesk", sans-serif;
+  font-size: 12px;
+}
+@media only screen and (min-width: 481px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Alpha", sans-serif;
+}
+h1:not(h1),
+h2:not(h1),
+h3:not(h1) {
+  font-weight: normal;
+}
+
+h1 {
+  font-size: 8em;
+}
+
+h2,
+h3 {
+  font-size: 3em;
+}
+
+p {
+  font-size: 1em;
+}
+
+@-webkit-keyframes goUpA {
+  0% {
+    color: #2E358B;
+    transform: translateY(100%);
+  }
+  100% {
+    color: white;
+    transform: translateY(0);
+  }
+}
+
+@keyframes goUpA {
+  0% {
+    color: #2E358B;
+    transform: translateY(100%);
+  }
+  100% {
+    color: white;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes goUpB {
+  0% {
+    color: #2E358B;
+    transform: translateY(100%);
+  }
+  100% {
+    color: white;
+    transform: translateY(0);
+  }
+}
+@keyframes goUpB {
+  0% {
+    color: #2E358B;
+    transform: translateY(100%);
+  }
+  100% {
+    color: white;
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes unhide {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes unhide {
+  100% {
+    transform: translateX(100%);
+  }
+}
+@-webkit-keyframes coverA {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes coverA {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@-webkit-keyframes coverB {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes coverB {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+header {
+  box-sizing: border-box;
+  color: white;
+  padding: 2em;
+  position: absolute;
+  width: 100%;
+  z-index: 2;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+header .container {
+  max-width: 1200px;
+  width: 100%;
+}
+header .container .title {
+  font-family: "Merriweather", serif;
+  font-size: 2em;
+}
+header .phoneNavBar {
+  display: none;
+}
+
+main section {
+  padding: 4rem 2rem;
+}
+@media only screen and (min-width: 768px) {
+  main section {
+    padding: 4rem 2rem;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  main section {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main section .sectionContainer {
+    max-width: 70rem;
+    width: 100%;
+  }
+}
+main .hero {
+  color: white;
+  position: relative;
+}
+main .hero .forceSize {
+  height: 99vh;
+  width: 100%;
+}
+main .hero .layerContainer {
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .hero .layerContainer:nth-child(4) {
+  align-items: flex-start;
+}
+main .hero .layerContainer .layer {
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: bottom;
+     object-position: bottom;
+  position: absolute;
+  width: 100%;
+}
+main .hero .layerContainer .layer:nth-child(1) {
+  height: 105%;
+  top: -5%;
+}
+@media (max-width: 840px) {
+  main .hero .layerContainer .layer {
+    height: 100%;
+  }
+}
+main .hero .layer3 {
+  box-sizing: border-box;
+  display: inline;
+  flex-direction: column;
+  height: 100vh !important;
+  max-width: 1200px;
+  padding: 2rem;
+  width: 100%;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .hero .layer3 h1 {
+  position: relative;
+  line-height: 0.8em;
+}
+main .hero .layer3 p {
+  margin: 2rem 0;
+}
+main .hero .layer3 button {
+  background-color: white;
+  border: none;
+  color: black;
+  cursor: pointer;
+  font-family: "Alpha", sans-serif;
+  font-size: 1.2em;
+  gap: 1em;
+  padding: 0.8em 1.5em;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 1000px) {
+  main .hero {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  main .hero .layer3 {
+    max-width: 70rem;
+  }
+}
+main .activities .firstContainer .top > div,
+main .gallery .firstContainer .top > div {
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: none;
+}
+main .activities .firstContainer .top > div div,
+main .gallery .firstContainer .top > div div {
+  border-top: 2px white solid;
+  width: 70%;
+}
+@media only screen and (min-width: 768px) {
+  main .activities .firstContainer .top > div div,
+main .gallery .firstContainer .top > div div {
+    width: 40%;
+  }
+}
+main .activities .firstContainer .top > div > span,
+main .gallery .firstContainer .top > div > span {
+  font-weight: bold;
+  margin: 1rem 0;
+}
+main .activities .firstContainer .top > div > span .number,
+main .gallery .firstContainer .top > div > span .number {
+  color: #CE3433;
+}
+main .activities .firstContainer .top h2,
+main .gallery .firstContainer .top h2 {
+  margin: 1rem 0;
+}
+main .activities .firstContainer .bottom,
+main .gallery .firstContainer .bottom {
+  border-top: 0.1rem solid #463DB2;
+  padding: 1rem 0 3rem;
+}
+main .activities .firstContainer .bottom p,
+main .gallery .firstContainer .bottom p {
+  text-align: justify;
+}
+@media only screen and (min-width: 1000px) {
+  main .activities .firstContainer .bottom p,
+main .gallery .firstContainer .bottom p {
+    max-width: 50rem;
+  }
+}
+main .activities {
+  background: rgb(16, 17, 56);
+  background: linear-gradient(180deg, rgb(16, 17, 56) 0%, rgb(28, 30, 98) 100%);
+  position: relative;
+  z-index: 999;
+}
+main .activities .secContainer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .activities .secContainer .cardsContainer {
+  display: flex;
+  gap: 2rem;
+  overflow: scroll;
+  -ms-scroll-snap-type: x mandatory;
+      scroll-snap-type: x mandatory;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+}
+main .activities .secContainer .cardsContainer::-webkit-scrollbar {
+  width: 0;
+}
+main .activities .secContainer .cardsContainer > :nth-child(1) {
+  border-bottom: 0.6rem solid #CE3433;
+}
+main .activities .secContainer .cardsContainer > :nth-child(2) {
+  border-bottom: 0.6rem solid lightblue;
+}
+main .activities .secContainer .cardsContainer > :nth-child(3) {
+  border-bottom: 0.6rem solid #FFDB58;
+}
+main .activities .secContainer .cardsContainer .card {
+  background-color: #463DB2;
+  flex: none;
+  flex-direction: column;
+  margin: 3rem 0 5rem;
+  padding-bottom: 3rem;
+  position: relative;
+  scroll-snap-align: center;
+  transition: 0.3s;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .activities .secContainer .cardsContainer .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 1rem 1rem 2rem;
+  transform: scale(1.05);
+  z-index: 2;
+}
+main .activities .secContainer .cardsContainer .card .cardCounter {
+  font-weight: bold;
+  left: 1.5em;
+  top: 1.5em;
+  position: absolute;
+}
+main .activities .secContainer .cardsContainer .card .cardCounter .cardNum {
+  font-size: 2em;
+}
+main .activities .secContainer .cardsContainer .card .cardCounter .totalCards {
+  color: #CE3433;
+  font-size: 1.4em;
+}
+main .activities .secContainer .cardsContainer .card img {
+  width: 100%;
+}
+main .activities .secContainer .cardsContainer .card p {
+  margin: 1rem 0;
+  text-align: center;
+}
+main .activities .secContainer .cardsContainer .card button {
+  width: 12rem;
+  background-color: #CE3433;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: "Alpha", sans-serif;
+  font-size: 1.2em;
+  gap: 1em;
+  padding: 0.8em 1.5em;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 768px) {
+  main .activities .secContainer .cardsContainer .card {
+    max-width: 450px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  main .activities .secContainer .cardsContainer {
+    font-size: 16px;
+    gap: 0;
+    overflow: visible;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  main .activities .secContainer .cardsContainer .card {
+    width: 32%;
+  }
+  main .activities .secContainer .cardsContainer .card h3 {
+    font-size: 2em;
+  }
+}
+main .separator {
+  height: 50vh;
+  padding: 0;
+  position: relative;
+}
+main .separator::before, main .separator::after {
+  content: "";
+  height: 4rem;
+  position: absolute;
+  width: 100%;
+}
+main .separator::before {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+  top: 0;
+}
+main .separator::after {
+  background: rgb(0, 0, 0);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
+  bottom: 0;
+}
+main .separator img {
+  width: 100%;
+  height: 120vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  bottom: 0;
+  position: absolute;
+}
+main .gallery {
+  background-color: #101138;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  position: relative;
+}
+main .gallery .image {
+  transform: translateY(calc(100% - 4rem));
+}
+main .gallery .image .galleryButton {
+  background-color: #2E358B;
+  border-top: 0.3rem solid #CE3433;
+  cursor: pointer;
+  height: 4rem;
+  width: 5rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .gallery .image .galleryButton i {
+  transform: rotate(-90deg);
+}
+@media only screen and (min-width: 1000px) {
+  main .gallery .image .galleryButton i {
+    transform: rotate(0);
+  }
+}
+main .gallery .image .imageContainer {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+main .gallery .image .imageContainer img {
+  bottom: 0;
+  height: 60vw;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  z-index: 1;
+}
+@media only screen and (min-width: 768px) {
+  main .gallery .image .imageContainer {
+    height: 22rem;
+  }
+}
+main .gallery .data {
+  background-color: #242275;
+  position: relative;
+  z-index: 999;
+}
+main .gallery .data .title {
+  background-color: #2E358B;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main .gallery .data .title h3,
+main .gallery .data .title .year {
+  color: #2E358B;
+  position: relative;
+}
+main .gallery .data .title h3::before,
+main .gallery .data .title .year::before {
+  -webkit-animation: var(--animation) 1s 0s;
+          animation: var(--animation) 1s 0s;
+  content: attr(data-content);
+  position: absolute;
+}
+main .gallery .data .title h3 {
+  font-size: 2em;
+  line-height: 0.8em;
+}
+@media only screen and (min-width: 481px) {
+  main .gallery .data .title h3 {
+    font-size: 2.3em;
+  }
+}
+main .gallery .data .title .year {
+  font-family: "Alpha", sans-serif;
+}
+@media only screen and (min-width: 481px) {
+  main .gallery .data .title .year {
+    font-size: 1.2em;
+  }
+}
+main .gallery .data .info {
+  overflow: hidden;
+  padding: 3rem 2rem;
+  position: relative;
+}
+main .gallery .data .info::before {
+  -webkit-animation: var(--animation) var(--time) 0s forwards ease;
+          animation: var(--animation) var(--time) 0s forwards ease;
+  background-color: #242275;
+  border-left: #CE3433 solid 0.2rem;
+  content: "";
+  height: calc(100% - 11rem);
+  position: absolute;
+  width: 100%;
+}
+main .gallery .data .info > div {
+  margin-bottom: 1.5rem;
+}
+main .gallery .data .info > div h4 {
+  margin-bottom: 0.8rem;
+}
+main .gallery .data .info button {
+  background-color: #CE3433;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-family: "Alpha", sans-serif;
+  font-size: 1.2em;
+  gap: 1em;
+  padding: 0.8em 1.5em;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+@media only screen and (min-width: 481px) {
+  main .gallery .data .info button {
+    padding: 1rem 4rem;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  main .gallery {
+    position: relative;
+  }
+  main .gallery .secContainer {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  main .gallery .secContainer::before {
+    content: "";
+    background: #1C1E62;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 90%;
+  }
+  main .gallery .secContainer .image {
+    transform: translateY(0);
+    transform: translateX(100%);
+    width: 100%;
+  }
+  main .gallery .secContainer .image .galleryButton {
+    position: absolute;
+    top: -4rem;
+  }
+  main .gallery .secContainer .image .galleryButton i {
+    transform: rotate(180deg);
+  }
+  main .gallery .secContainer .image .imageContainer {
+    height: 28rem;
+  }
+  main .gallery .secContainer .image .imageContainer img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    width: 100%;
+  }
+  main .gallery .secContainer .data {
+    box-shadow: -0.2rem 0 0 white;
+    width: 80%;
+  }
+  main .gallery .secContainer .data .title {
+    margin-top: 3rem;
+  }
+}
+
+footer {
+  background-color: #101138;
+  font-size: 1.2rem;
+  padding: 1rem 1rem 2rem;
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}/*# sourceMappingURL=styles.css.map */
