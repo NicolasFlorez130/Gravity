@@ -84,6 +84,24 @@ p {
   font-size: 1em;
 }
 
+body {
+  overflow: hidden;
+}
+body .preloader {
+  display: flex;
+  height: auto;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 4;
+}
+body .preloader > div {
+  background-color: #1C1E62;
+  height: 100vh;
+  width: 33.3333333333%;
+}
+
 @-webkit-keyframes goUpA {
   0% {
     color: #2E358B;
@@ -182,7 +200,6 @@ p {
 header {
   box-sizing: border-box;
   color: white;
-  padding: 2em;
   position: absolute;
   width: 100%;
   z-index: 2;
@@ -193,6 +210,7 @@ header {
 }
 header .container {
   max-width: 1200px;
+  padding: 2em;
   width: 100%;
 }
 header .container .title {
@@ -293,10 +311,16 @@ main .hero .layer3 button {
   font-size: 1.2em;
   gap: 1em;
   padding: 0.8em 1.5em;
+  position: relative;
+  transition: 0.4s ease;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+main .hero .layer3 button:hover {
+  color: white;
+  background-color: black;
 }
 @media only screen and (min-width: 1000px) {
   main .hero {
@@ -336,7 +360,7 @@ main .gallery .firstContainer .top > div > span {
 }
 main .activities .firstContainer .top > div > span .number,
 main .gallery .firstContainer .top > div > span .number {
-  color: #CE3433;
+  color: #e83939;
 }
 main .activities .firstContainer .top h2,
 main .gallery .firstContainer .top h2 {
@@ -361,7 +385,6 @@ main .activities {
   background: rgb(16, 17, 56);
   background: linear-gradient(180deg, rgb(16, 17, 56) 0%, rgb(28, 30, 98) 100%);
   position: relative;
-  z-index: 999;
 }
 main .activities .secContainer {
   align-items: center;
@@ -383,7 +406,7 @@ main .activities .secContainer .cardsContainer::-webkit-scrollbar {
   width: 0;
 }
 main .activities .secContainer .cardsContainer > :nth-child(1) {
-  border-bottom: 0.6rem solid #CE3433;
+  border-bottom: 0.6rem solid #e83939;
 }
 main .activities .secContainer .cardsContainer > :nth-child(2) {
   border-bottom: 0.6rem solid lightblue;
@@ -406,10 +429,10 @@ main .activities .secContainer .cardsContainer .card {
   flex-wrap: wrap;
   justify-content: center;
 }
-main .activities .secContainer .cardsContainer .card:hover {
-  box-shadow: rgba(0, 0, 0, 0.5) 1rem 1rem 2rem;
-  transform: scale(1.05);
-  z-index: 2;
+@media only screen and (min-width: 1000px) {
+  main .activities .secContainer .cardsContainer .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.3) 1rem 1rem 2rem;
+  }
 }
 main .activities .secContainer .cardsContainer .card .cardCounter {
   font-weight: bold;
@@ -421,7 +444,7 @@ main .activities .secContainer .cardsContainer .card .cardCounter .cardNum {
   font-size: 2em;
 }
 main .activities .secContainer .cardsContainer .card .cardCounter .totalCards {
-  color: #CE3433;
+  color: #e83939;
   font-size: 1.4em;
 }
 main .activities .secContainer .cardsContainer .card img {
@@ -433,7 +456,7 @@ main .activities .secContainer .cardsContainer .card p {
 }
 main .activities .secContainer .cardsContainer .card button {
   width: 12rem;
-  background-color: #CE3433;
+  background-color: #e83939;
   border: none;
   color: white;
   cursor: pointer;
@@ -441,10 +464,16 @@ main .activities .secContainer .cardsContainer .card button {
   font-size: 1.2em;
   gap: 1em;
   padding: 0.8em 1.5em;
+  position: relative;
+  transition: 0.4s ease;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+main .activities .secContainer .cardsContainer .card button:hover {
+  color: #e83939;
+  background-color: white;
 }
 @media only screen and (min-width: 768px) {
   main .activities .secContainer .cardsContainer .card {
@@ -471,6 +500,7 @@ main .activities .secContainer .cardsContainer .card button {
 main .separator {
   height: 50vh;
   padding: 0;
+  overflow: hidden;
   position: relative;
 }
 main .separator::before, main .separator::after {
@@ -489,7 +519,7 @@ main .separator::after {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%);
   bottom: 0;
 }
-main .separator img {
+main .separator > * {
   width: 100%;
   height: 120vh;
   -o-object-fit: cover;
@@ -509,7 +539,7 @@ main .gallery .image {
 }
 main .gallery .image .galleryButton {
   background-color: #2E358B;
-  border-top: 0.3rem solid #CE3433;
+  border-top: 0.3rem solid #e83939;
   cursor: pointer;
   height: 4rem;
   width: 5rem;
@@ -548,7 +578,7 @@ main .gallery .image .imageContainer img {
 main .gallery .data {
   background-color: #242275;
   position: relative;
-  z-index: 999;
+  z-index: 3;
 }
 main .gallery .data .title {
   background-color: #2E358B;
@@ -598,7 +628,7 @@ main .gallery .data .info::before {
   -webkit-animation: var(--animation) var(--time) 0s forwards ease;
           animation: var(--animation) var(--time) 0s forwards ease;
   background-color: #242275;
-  border-left: #CE3433 solid 0.2rem;
+  border-left: #e83939 solid 0.2rem;
   content: "";
   height: calc(100% - 11rem);
   position: absolute;
@@ -611,7 +641,7 @@ main .gallery .data .info > div h4 {
   margin-bottom: 0.8rem;
 }
 main .gallery .data .info button {
-  background-color: #CE3433;
+  background-color: #e83939;
   border: none;
   color: white;
   cursor: pointer;
@@ -619,10 +649,16 @@ main .gallery .data .info button {
   font-size: 1.2em;
   gap: 1em;
   padding: 0.8em 1.5em;
+  position: relative;
+  transition: 0.4s ease;
   align-items: center;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+main .gallery .data .info button:hover {
+  color: #e83939;
+  background-color: white;
 }
 @media only screen and (min-width: 481px) {
   main .gallery .data .info button {

@@ -1,7 +1,7 @@
 const photos = [
-    { title: 'Explore', year: '2004', url: 'explore.webp' },
-    { title: 'Discover', year: '2015', url: 'discover.webp' },
-    { title: 'Sightseeing', year: '2007', url: 'sightseeing.webp' },
+    { title: 'Explore', year: '2004', url: 'explore.webp', date: 'July 09 - 2008' },
+    { title: 'Discover', year: '2015', url: 'discover.webp', date: 'August 21 - 2015' },
+    { title: 'Sightseeing', year: '2007', url: 'sightseeing.webp', date: 'Febrary 06 - 2007' },
 ];
 
 let i = 0, photo = photos[i];
@@ -17,7 +17,20 @@ const editElement = (time, callback) => {
     setTimeout(callback, time * 1000);
 }
 
+if (localStorage.getItem('disclamed') == null) {
+    window.alert('DISCLAIMER: This website was built with only learning purposes based on a Studio VØR webpage concept, is NOT a final product, and I´m not the owner of this web concept. If you´re interested in the original template and the other works of them at the bottom will be a link to their webpage.')
+    localStorage.setItem('disclamed', true)
+}
+
+
 window.onload = () => {
+
+    //preloader
+
+    document.body.style.overflowY = 'scroll';
+    const preloaderTl = gsap.timeline();
+    preloaderTl.to('.preloader div', { duration: 1, y: window.innerHeight, stagger: .2 })
+    preloaderTl.to('.preloader', { duration: 0, display: 'none' })
 
     const layers = Array.from(document.querySelectorAll('.layer')).reverse(),
         layerValues = [0, 500, 900, 1200],
@@ -25,6 +38,9 @@ window.onload = () => {
         img = document.querySelector('.image .imageContainer'),
         titles = Array.from(document.querySelectorAll('.gallery .data .title > *')),
         data = document.querySelector('.gallery .data');
+
+
+    //onScroll events
 
     layers.forEach((layer, i) => {
 
@@ -35,19 +51,26 @@ window.onload = () => {
             end: '200% top',
         }
 
-        gsap.to(layer, { scrollTrigger: triggerConfig, duration: .1, y: layerValues[i], ease: 'none' })
+        gsap.to(layer, { scrollTrigger: triggerConfig, y: layerValues[i], ease: 'none' })
     })
 
-    gsap.to('.separator img', {
+    if (matchMedia.matches) {
+        gsap.from('.activities .card', {
+            scrollTrigger: {
+                trigger: '.cardsContainer',
+                start: '20% bottom'
+            }, duration: .5, opacity: 0, y: 200, ease: 'none', stagger: .2,
+        })
+    }
+
+    gsap.to('.separator video', {
         scrollTrigger: {
             trigger: '.separator',
             scrub: true,
             start: 'top bottom',
             end: 'bottom top',
-        }, duration: .1, y: '40%'
+        }, y: '40%'
     })
-
-    //onScroll events
 
     const verticalSets = {
         img: {
@@ -172,6 +195,11 @@ window.onload = () => {
 
         data.style.setProperty('--time', '2s');
         data.style.setProperty('--animation', `cover${condition}`);
+
+
+        editElement(1, () => {
+            document.querySelector('.date .text').innerText = photo.date;
+        })
     }
 
 }
