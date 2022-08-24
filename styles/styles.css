@@ -33,11 +33,16 @@
 * a {
   color: white;
 }
+*::-webkit-scrollbar {
+  display: none;
+}
 
 html {
   color: white;
   font-family: "Neubaugrotesk", sans-serif;
   font-size: 12px;
+  height: 100vh;
+  overflow: hidden;
 }
 @media only screen and (min-width: 481px) {
   html {
@@ -85,7 +90,9 @@ p {
 }
 
 body {
+  height: 100vh;
   overflow: hidden;
+  background-color: #101138;
 }
 body .preloader {
   display: flex;
@@ -221,6 +228,10 @@ header .phoneNavBar {
   display: none;
 }
 
+main {
+  overflow: hidden;
+  height: 100vh;
+}
 main section {
   padding: 4rem 2rem;
 }
